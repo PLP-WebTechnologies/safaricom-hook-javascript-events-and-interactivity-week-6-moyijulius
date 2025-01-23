@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Webpage</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+   
+    <h1>Interactive Webpage</h1>
+
+    <!-- Toggle Button -->
+    <button onclick="toggleBackgroundColor()">Toggle Background Color</button>
+
+    <!-- Slider with Real-Time Feedback -->
+    <div style="text-align: center; margin-top: 30px;">
+        <label for="textSizeSlider">Text Size:</label>
+        <input type="range" id="textSizeSlider" min="10" max="50" value="16" oninput="updateTextSize()">
+        <div id="sliderValue">16px</div>
+        <p id="dynamicText" style="font-size: 16px; margin-top: 10px;">This text size will change as you move the slider.</p>
+    </div>
+
+    <!-- Modal -->
+    <button style="margin-top: 40px;" onclick="openModal()">Open Modal</button>
+    <div id="modal">
+        <div id="modalContent">
+            <h2>Modal Window</h2>
+            <button onclick="closeModal()">Close</button>
+        </div>
+    </div>
+
+    <!-- Form with Validation -->
+    <form id="myForm" onsubmit="return validateForm()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name">
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" >
+        
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password">
+
+        <input type="submit" value="Submit">
+        <div id="errorMessages"></div>
+    </form>
+
+    <!-- Dropdown Menu -->
+    <div style="text-align:center; margin-top: 40px;">
+        <label for="dropdown">Choose an option:</label>
+        <select id="dropdown" onchange="showCustomMessage()">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+        </select>
+        <p id="dropdownMessage"></p>
+    </div>     
+  <script src="script.js"></script>
+</body>
+</html>
